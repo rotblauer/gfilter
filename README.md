@@ -14,12 +14,12 @@ Usage of gfilter:
   -match-none string
         match none of these properties (gjson syntax, comma separated queries)
 
-$ cat <<EOF | gfilter --match-all '#(name.first=="Janet")'
+$ cat <<EOF | gfilter --match-all '#(age>42),#(name.last=="Smith")'
 {"name":{"first":"Janet","last":"Prichard"},"age":47}
 {"name":{"first":"Carol","last":"Smith"},"age":49}
 {"name":{"first":"John","last":"Smith"},"age":42}
 {"name":{"first":"Lisa","last":"Smith"},"age":49}
 EOF
-
-{"name":{"first":"Janet","last":"Prichard"},"age":47}
+{"name":{"first":"Carol","last":"Smith"},"age":49}
+{"name":{"first":"Lisa","last":"Smith"},"age":49}
 ```
