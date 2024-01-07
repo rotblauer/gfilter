@@ -104,5 +104,6 @@ func splitFlagStringSlice(s string) []string {
 }
 
 func main() {
+	flag.Parse()
 	filterStream(os.Stdin, os.Stdout, splitFlagStringSlice(*flagMatchAll), splitFlagStringSlice(*flagMatchAny), splitFlagStringSlice(*flagMatchNone))
 }
